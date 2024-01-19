@@ -5,7 +5,7 @@ try:
     import re
     from pdfminer.high_level import extract_pages, extract_text
 
-    text = extract_text(r"C:\Users\shawn\OneDrive\Desktop\hackathon\transcript.pdf")
+    text = extract_text("transcript.pdf")
     print(text)
     time.sleep(20)
 
