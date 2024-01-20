@@ -1,13 +1,5 @@
-Medgar_Evers = {"CS  241","CS  244","CS  246","CS  260","CS  260","CS  265", "CS  281","CS  312",
-"CS  315","CS  325","CS  345","CS  350","CS  360",
-"CS  395","MTH  151","MTH  202","MTH  203","MTH  204","MTH  237","PHY  212","PHYL  212","PHYW  212","PHY  213",
-"PHYL  213","PHYW  213"   
-}
+classes = {'CSC 229', 'BIO 180', 'MTH 231', 'GEO 102', 'CSC 332', 'CSC 425', 'CHM 121', 'CSC 250', 'GEO 116', 'BIO 171', 'AST 160', 'CSC 223', 'CSC 226', 'CSC 326', 'MTH 123', 'CSC 424', 'CSC 426', 'MTH 130', 'PHY 160', 'CSC 220', 'AST 120', 'CHM 127', 'CSC 446', 'CSC 211', 'CSC 228', 'CSC 490', 'CSC 346', 'CSC 330', 'CSC 482', 'BIO 170', 'ESC 111', 'CSC 421', 'CSC 126', 'CSC 480', 'CSC 427', 'CSC 436', 'BIO 181', 'CHM 142', 'CSC 347', 'CSC 382', 'CSC 430', 'CHM 141', 'CSC 225', 'CSC 305', 'CSC 470', 'CSC 432', 'ESC 110', 'MTH 229', 'GEO 103', 'PHY 121', 'GEO 115', 'MTH 228', 'CSC 221', 'CSC 429', 'MTH 232', 'CSC 434', 'MTH 125', 'CSC 245', 'CSC 235', 'CSC 412', 'CSC 484', 'PHY 120', 'CSC 438', 'MTH 230', 'CSC 315', 'CSC 475', 'PHY 161', 'CSC 420', 'MTH 306', 'CSC 435', 'CSC 227'}
 
-no_spaces_list = [item.replace(" ", "") for item in Medgar_Evers]
+test = [x.replace(" ", "") for x in classes]
 
-# Convert the list with no spaces to a set
-unique_classes_set = set(no_spaces_list)
-
-print(unique_classes_set)
-
+print(test)
