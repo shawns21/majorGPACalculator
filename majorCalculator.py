@@ -29,6 +29,7 @@ if __name__ == '__main__':
 
     possibleEnds = {'A', 'B', 'C', 'D', 'F', '-', '+'}
 
+
     def JohnJaySearch():
 
         grades = []
@@ -50,7 +51,29 @@ if __name__ == '__main__':
     
             if (line[:2] in MedgarEverSubjects):
 
-                if (line[:8].replace(" ", "") in MedgarEversClasses or line[:9].replace(" ", "") in MedgarEversClasses):
+                if (line[:8].replace(" ", "") in MedgarEversClasses) or (line[:9].replace(" ", "") in MedgarEversClasses):
+                   
+                   hold = line[-7:].replace(" ", "")
+ 
+                   if hold[-1] in possibleEnds:
+                    
+                    if not hold[0].isdigit():
+
+                        hold = hold[1:]
+                       
+                    grades.append(hold)
+        
+        return grades
+
+    def StatenIslandSearch():
+
+        grades = []
+
+        for line in lines_list:
+    
+            if (line[:3] in StatenIslandSubjects):
+
+                if (line[:8].replace(" ", "") in StatenIslandClasses) or (line[:9].replace(" ", "") in StatenIslandClasses):
                    
                    hold = line[-7:].replace(" ", "")
  
@@ -62,33 +85,38 @@ if __name__ == '__main__':
                        
                     grades.append(hold)
 
-        
         return grades
-
-    def StatenIslandSearch():
-        for line in lines_list:
-    
-            if (line[:3] in StatenIslandSubjects):
-
-                if (line[:9].replace(" ", "") in StatenIslandClasses):
-                    print(line)
-    
+         
     def BrooklynCollegeSearch():
+
+        grades = []
+
         for line in lines_list:
     
             if (line[:2] in BrooklynCollegeSubjects):
 
-                if (line[:10].replace(" ", "") in BrooklynCollegeClasses):
-                    print(line)
-     
+                if (line[:10].replace(" ", "") in BrooklynCollegeClasses or line[:11].replace(" ", "") in BrooklynCollegeClasses):
+                   
+                   hold = line[-7:].replace(" ", "")
+ 
+                   if hold[-1] in possibleEnds:
+                    
+                    if not hold[0].isdigit():
 
-    pdf = 'SM1.pdf'
+                        hold = hold[1:]
+                       
+                    grades.append(hold)
+          
+        return grades 
+
+    pdf = 'transcript.pdf'
     extractedText = extractTextFromPdf(pdf)
 
     lines_list = extractedText.splitlines()
  
     #Whatever choice they choose for the school they are in, we will use that schools search function
-    creditsAndGrades = MedgarEversSearch()
+
+    creditsAndGrades = JohnJaySearch()
 
     grade_mapping = {'A+': 4.0, 'A': 4.0, 'A-': 3.7, 'B+': 3.3, 'B': 3.0, 'B-': 2.7, 'C+': 2.3, 'C': 2.0, 'C-': 1.7, 'D+': 1.3, 'D': 1.0, 'D-': 0.7, 'F': 0.0}
 
@@ -113,4 +141,3 @@ if __name__ == '__main__':
         majorGPA = round(weighted_gpa, 4)
 
         print(majorGPA)
-
